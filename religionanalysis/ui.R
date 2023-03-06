@@ -15,7 +15,18 @@ fluidPage(
   
     navbarPage("Examination of the US Religious Environment",
                tabPanel("About"),
-               tabPanel("Interactive pg 1"),
+               tabPanel("Interactive pg 1",
+                        sidebarLayout(
+                          sidebarPanel(
+                            radioButtons("religious", "Select religiosity of 
+                                         respondents:", choices = 
+                                           c("Religious", "Nonreligious")),
+                            
+                          ),
+                          mainPanel(
+                            plotOutput("multivariable")
+                          )
+                        )),
                tabPanel("Interactive pg 2"),
                tabPanel("Interactive pg 3"),
                tabPanel("Summary"))
