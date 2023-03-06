@@ -12,15 +12,12 @@ library(tidyverse)
 
 # Define UI for application that draws a histogram
 fluidPage(
+  
+    navbarPage("Examination of the US Religious Environment",
+               tabPanel("About"),
+               tabPanel("Interactive pg 1"),
+               tabPanel("Interactive pg 2"),
+               tabPanel("Interactive pg 3"),
+               tabPanel("Summary"))
 
-    # Application title
-    titlePanel("Examination of the US Religious Environment"),
-
-    tabsetPanel(
-      tabPanel("About"),
-      tabPanel("Interactive pg 1"),
-      tabPanel("Interactive pg 2"),
-      tabPanel("Interactive pg 3"),
-      tabPanel("Summary")
-    )
 )
