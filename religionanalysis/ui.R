@@ -14,9 +14,13 @@ library(tidyverse)
 fluidPage(
 
     # Application title
-    titlePanel("Examination of the religious environment in the US"),
+    titlePanel("Examination of the US Religious Environment"),
 
     tabsetPanel(
-      tabPanel("About")
+      tabPanel("About"),
+      tabPanel("Interactive pg 1"),
+      tabPanel("Interactive pg 2"),
+      tabPanel("Interactive pg 3"),
+      tabPanel("Summary")
     )
 )
