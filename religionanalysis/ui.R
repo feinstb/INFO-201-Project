@@ -21,21 +21,16 @@ fluidPage(
                           and can be found at https://www.thearda.com/")),
                         br(),
                         p((h5(strong("Questions:")))),
-                        p("Some questions we are seeking to answer in this analysis
+                        p("Some questions we seek to answer in this analysis
                           are:"), 
-                        p("- What is the demographic makeup of the unaffiliated?"),
-                        p("- A well known upside to belief in religion is the idea that 
-                          life has a very well-defined meaning, but those without religious 
-                          belief are left to cope with the relative meaningless of life in other ways. 
-                          What are they? This would be a hard question to answer without in-the-field 
-                          research, but it could be interesting to develop a qualitative understanding of this."),
-                        p("- What kind of irreligious organizations exist? Are there 
-                          more in recent years than previously?"),
-                        p("- Does parent religiosity increase child religiosity?"),
-                        p("- Does belief in religion make one more resilient to hardship?"),
+                        p("- What are the opinions of survey respondents on various topics
+                          and does religiosity seem to have an impact?"),
+                        p("- What is the rate of irreligiosity as of 2021?"),
+                        p("- What are the most religious zodiac signs?"),
+                        p("- How common is interfaith marriage?"),
                         br(),
                         p("This dataset will help answer the questions above using
-                          a variety of statistics, present in the datast, including zodiac signs and marraige status"),
+                          a variety of statistics present in the dataset, including zodiac signs and marriage status"),
                         br(),
                         img(src = "different-religions.jpeg", height = 500, width = 800),
                         ),
