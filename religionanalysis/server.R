@@ -14,7 +14,7 @@ function(input, output, session) {
   
     data_2021 <- read.csv("gss2021.csv")
     pg1_data <- select(data_2021, RELIG, IMMLIMIT, MARHOMO, SEXEDUC, GRNCON,
-                       CAPPUN)
+                       CAPPUN, SPREL)
     
     # Change multivariable plot labels from numerical values to corresponding
     # labels.
@@ -119,7 +119,7 @@ function(input, output, session) {
              TBD")
     })
     
-    output$sprel_plot <- renderPlot({
+    output$pg3_plot <- renderPlot({
       data_2021 %>%
         filter(SPREL == input$sprel) %>%
         ggplot(aes(x = SEXEDUC, y = GRNCON)) +

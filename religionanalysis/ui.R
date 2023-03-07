@@ -38,11 +38,13 @@ fluidPage(
                tabPanel("Cross-Analyzing Environmentalism and Sex Education in Schools Across Different Religions",
                         sidebarLayout(
                           sidebarPanel(
-                            selectInput("sprel", "Select a religious affiliation:", 
-                                        choices = c("1", "2", "3", "4", "5", "6","7")),
+                            selectInput("pg3_religiosity", "Select a religious affiliation:", 
+                                        choices = c("Protestant", "Catholic",
+                                                    "Jewish", "None",)),
+    
                           ),
                           mainPanel(
-                            plotOutput("sprel_plot")
+                            plotOutput("pg3_plot")
                           )
                         )
                         ),
