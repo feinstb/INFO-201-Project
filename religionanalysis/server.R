@@ -28,7 +28,7 @@ function(input, output, session) {
       }
     })
     
-    # have to fix labels
+    # have to fix labels and add description of chart
     output$multivariable <- renderPlot({
       if (input$var_pg1 == "Immigration") {
         ggplot(pg1_reactive(), aes(x = IMMLIMIT)) +
