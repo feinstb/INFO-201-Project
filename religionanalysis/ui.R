@@ -30,7 +30,8 @@ fluidPage(
                             
                           ),
                           mainPanel(
-                            plotOutput("multivariable")
+                            plotOutput("multivariable"),
+                            textOutput("pg1desc")
                           )
                         )),
                tabPanel("Interactive pg 2"),
