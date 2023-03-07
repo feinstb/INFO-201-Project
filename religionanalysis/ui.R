@@ -54,7 +54,26 @@ fluidPage(
                             textOutput("pg1desc")
                           )
                         )),
-               tabPanel("Interactive pg 2"),
+               tabPanel("Relationship between Zodiac Signs and Religion",
+                        sidebarLayout(
+                          sidebarPanel(
+                            selectInput(
+                              "zodiac",
+                              "Select a zodiac sign:",
+                              choices = c("Aries", "Taurus", "Gemini", "Cancer",
+                                          "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius",
+                                          "Capricorn", "Aquarius", "Pisces", "Total Sample"
+                              ),
+                              selected = "Total Sample"
+                            )
+                          ),
+                          mainPanel(
+                            plotOutput("zodiac_bar"),
+                            textOutput("pg2_desc")
+                          )
+                        )
+               ),
+               
                tabPanel("Prevalence of Interfaith Marriage",
                         sidebarLayout(
                           sidebarPanel(

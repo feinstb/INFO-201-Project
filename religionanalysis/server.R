@@ -158,6 +158,59 @@ function(input, output, session) {
              overwhelmingly marry within their faith.")
     })
     
+    zodiac_convert <- data.frame(
+      sign = c("Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo",
+               "Libra", "Scorpio", "Sagittarius", "Capricorn", "Aquarius",
+               "Pisces"),
+      value = c(1, 2, 3, 4, 5,6,7,8,9,10,11,12)
+    )    
+    pg2_data <- reactive({
+      if (input$zodiac == "Total Sample") {
+        # If "Total Sample" is selected, use all data
+        data <- data_2021
+      } else {
+        filter(data_2021, ZODIAC == zodiac_convert$value[zodiac_convert$sign == input$zodiac])
+      }
+    })
+    religion_counts <- reactive({
+      pg2_data() %>%
+        group_by(RELIG) %>%
+        summarize(count = n())
+    })
+    total_people <- reactive({
+      sum(religion_counts()$count)
+    })
+    output$zodiac_bar <- renderPlot({
+      if (input$zodiac == "Total Sample") {
+        # If "Total Sample" is selected, use all data and title plot accordingly
+        plot_title <- "Total Sample"
+        data <- religion_counts()
+      } else {
+        # Otherwise, filter data based on selected zodiac sign and title plot accordingly
+        plot_title <- paste("Zodiac sign:", input$zodiac)
+        data <- religion_counts()
+      }
+      ggplot(data, aes(x = RELIG, y = count / total_people())) +
+        geom_bar(stat = "identity") + 
+        ggtitle(plot_title) +
+        xlab("Religion") + ylab("Percentage") +
+        scale_x_continuous(breaks = 1:13, labels = c("Protestant", "Catholic", "Jewish", "None", "Other", "Buddhism", "Hinduism", 
+                                                     "Other Eastern religions", "Muslim/Islam", "Orthodox Christian", "Christian", 
+                                                     "Native American", "Inter/nondenominational"))
+    })
+    output$pg2_desc <- renderText({
+      return("This plot gives the user the ability to see what ratio of each religion
+             is based on their zodiac sign. From this we can see that zodiac sign does 
+             not have any stastically significant impact, with most zodiac signs 
+             having a similar ratio of religions to the total sample. Generally, 
+             protestant has the highest ratio, followed by none and then catholicism
+             and then the remaining all being a low amount compartively. There are some
+             small outliers, such as virgo having a plurality of people who have no 
+             religion and pisces having a relatively higher level of budhists, but
+             overall we can conclude that zodiac sign has no true impact on religion.")
+    })
+    
+    
     
     
 
