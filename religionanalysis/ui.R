@@ -15,12 +15,18 @@ fluidPage(
   
     navbarPage("Examination of the US Religious Environment",
                tabPanel("About"),
-               tabPanel("Interactive pg 1",
+               tabPanel("Multivariable Analysis Based on Religiosity",
                         sidebarLayout(
                           sidebarPanel(
                             radioButtons("religious", "Select religiosity of 
                                          respondents:", choices = 
                                            c("Religious", "Nonreligious")),
+                            selectInput("var_pg1", "Variable to Display:",
+                                        choices = c("Immigration", 
+                                                    "Environmental Concern", 
+                                                    "Sex Education", 
+                                                    "Death Penalty", 
+                                                    "Gay Marriage"))
                             
                           ),
                           mainPanel(
