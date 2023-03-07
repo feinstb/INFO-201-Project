@@ -35,7 +35,7 @@ fluidPage(
                           )
                         )),
                tabPanel("Interactive pg 2"),
-               tabPanel("Interactive pg 3",
+               tabPanel("Prevalence of Interfaith Marriage",
                         sidebarLayout(
                           sidebarPanel(
                             selectInput("pg3_religiosity", "Select a religious affiliation:", 
@@ -50,7 +50,8 @@ fluidPage(
     
                           ),
                           mainPanel(
-                            plotOutput("pg3_plot")
+                            plotOutput("pg3_plot"),
+                            textOutput("pg3_desc")
                           )
                         )
                         ),

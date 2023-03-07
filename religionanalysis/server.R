@@ -51,6 +51,10 @@ function(input, output, session) {
                                         "Christian", "Native American",
                                         "Inter/nondenominational"))
     
+    pg1_data$SPREL <- factor(pg1_data$SPREL, levels = c(1, 2, 3, 4, 5, 6, 7),
+                             labels = c("Protestant", "Catholic", "Jewish",
+                                        "None", "Other", "Buddhism", "Hinduism"))
+    
     
     pg1_reactive <- reactive({
       if (input$religious == "Religious") {
@@ -126,8 +130,11 @@ function(input, output, session) {
              Then users can switch back and forth between the two radio buttons
              to compare attitudes of religious respondents to nonreligious
              respondents. The variables chosen for comparison are pretty
-             contested issues in American politics and cultural life and
-             TBD")
+             contested issues in American politics and cultural life and before 
+             viewing the plot, users can probably guess what the trends will look
+             like. The plot does allow for direct visual comparison between 
+             religiosity, as well as an idea of what current attitudes are,
+             at least as of 2021.")
     })
     
     pg3_reactive <- reactive({
@@ -138,6 +145,17 @@ function(input, output, session) {
     output$pg3_plot <- renderPlot({
       ggplot(pg3_reactive(), aes(x = SPREL)) +
           geom_bar()
+    })
+    
+    output$pg3_desc <- renderText({
+      return("This plot gives the user a chance to select the religious affiliation
+             of respondents and then see what the religious affiliation is of
+             their spouse (if they are married). NA is the number of missing
+             responses and in a few cases of religiosity, the numbers were so
+             low and the prevalence of missing answers so high that the plot
+             doesn't offer much useful information besides a visualization of
+             missing responses. For the majority, we can see that people
+             overwhelmingly marry within their faith.")
     })
     
     
