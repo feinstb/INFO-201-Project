@@ -1,4 +1,4 @@
-#
+  #
 # This is the server logic of a Shiny web application. You can run the
 # application by clicking 'Run App' above.
 #
@@ -118,6 +118,16 @@ function(input, output, session) {
              contested issues in American politics and cultural life and
              TBD")
     })
+    
+    output$sprel_plot <- renderPlot({
+      data_2021 %>%
+        filter(SPREL == input$sprel) %>%
+        ggplot(aes(x = SEXEDUC, y = GRNCON)) +
+        geom_point()
+    })
+    
+    
+    
 
 
 
