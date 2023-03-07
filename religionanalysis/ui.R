@@ -35,12 +35,18 @@ fluidPage(
                           )
                         )),
                tabPanel("Interactive pg 2"),
-               tabPanel("Cross-Analyzing Environmentalism and Sex Education in Schools Across Different Religions",
+               tabPanel("Interactive pg 3",
                         sidebarLayout(
                           sidebarPanel(
                             selectInput("pg3_religiosity", "Select a religious affiliation:", 
                                         choices = c("Protestant", "Catholic",
-                                                    "Jewish", "None",)),
+                                                    "Jewish", "None", "Other",
+                                                    "Buddhism", "Hinduism",
+                                                    "Other Eastern Religions",
+                                                    "Muslim/Islam",
+                                                    "Orthodox Christian",
+                                                    "Christian", "Native American",
+                                                    "Inter/nondenominational")),
     
                           ),
                           mainPanel(

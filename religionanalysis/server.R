@@ -40,6 +40,17 @@ function(input, output, session) {
                                           "Disagree",
                                           "Strongly disagree"))
     
+    pg1_data$RELIG <- factor(pg1_data$RELIG, levels = c(1, 2, 3, 4, 5, 6, 7,
+                                                        8, 9, 10, 11, 12, 13),
+                             labels = c("Protestant", "Catholic",
+                                        "Jewish", "None", "Other",
+                                        "Buddhism", "Hinduism",
+                                        "Other Eastern Religions",
+                                        "Muslim/Islam",
+                                        "Orthodox Christian",
+                                        "Christian", "Native American",
+                                        "Inter/nondenominational"))
+    
     
     pg1_reactive <- reactive({
       if (input$religious == "Religious") {
@@ -119,11 +130,14 @@ function(input, output, session) {
              TBD")
     })
     
+    pg3_reactive <- reactive({
+      pg1_data %>%
+        filter(RELIG == input$pg3_religiosity)
+    })
+    
     output$pg3_plot <- renderPlot({
-      data_2021 %>%
-        filter(SPREL == input$sprel) %>%
-        ggplot(aes(x = SEXEDUC, y = GRNCON)) +
-        geom_point()
+      ggplot(pg3_reactive(), aes(x = SPREL)) +
+          geom_bar()
     })
     
     
