@@ -1,5 +1,5 @@
 # Visualizations of 2021 General Social Survey Responses
-#### Religioisity in the US and Variable Comparisons
+#### Religiosity in the US and Variable Comparisons
 
 [Shiny App Link]()
 INFO 201 Group BA6
