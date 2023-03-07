@@ -59,10 +59,10 @@ function(input, output, session) {
     pg1_reactive <- reactive({
       if (input$religious == "Religious") {
         pg1_data %>%
-          filter(RELIG != 4)
-      } else {
+          filter(RELIG != "None")
+      } else if (input$religious == "Nonreligious"){
         pg1_data %>%
-          filter(RELIG == 4)
+          filter(RELIG == "None")
       }
     })
     

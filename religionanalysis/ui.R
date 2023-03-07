@@ -76,37 +76,43 @@ fluidPage(
                         ),
                tabPanel("Summary",
                         p((h2(strong("Conclusion")))),
-                          p("A recurring pattern in our data was religiously 
-                          affiliated people and non-affiliated people tending 
-                          to disagree more heavily on already controversial topics.
-                          This included issues such as the death penality and 
-                          immigration where the two groups had starkly 
-                          different views while the difference in opinion for 
-                          topics such as sex education in grade school was almost negligable. 
+                          p("A recurring pattern in our data was that religiously 
+                          affiliated people and non-affiliated people have 
+                          disparate responses to certain politicized topics. That 
+                          conclusion was more or less expected given the political 
+                          divide in the U.S. and its slight ties to religion. It was 
+                          curious to see that the responses to most of these topics 
+                          tended to lean towards a more accepting attitude, which 
+                          indicates a rather positive change or trend.
                           The broader implications of these results are that 
                           religiously affiliated people and non-affiliated 
-                          people have fumdentally different beliefs and values 
-                          in matters that are more grey and less clear as to 
-                          what is acceptable or right in our current society. 
-                          It is also important to note that in a vast majority
-                          of cases religion informs an individual's ethics and 
+                          people have fundentally different beliefs and values 
+                          in matters that are less clear as to 
+                          what is acceptable or right in our current society, but 
+                          another notable point is that the number of nonreligious 
+                          people is higher than ever, swaying the general state 
+                          of affairs. It is important to note that in a vast majority
+                          of cases, religion informs an individual's ethics and 
                           shapes their political inclinations. It isn't inherently 
                           a tool for division, but does seem to unintentionally 
                           create a divide. The rise in the nonreligious population,
                           at least in the U.S., creates the potential for a shift 
                           in attitudes regarding many important political and 
                           cultural topics, which could have a far-reaching 
-                          impact on the country as a whole."),
+                          impact on the country as a whole. For this reason, 
+                          it's good to develop an idea of where the country's 
+                          dispersed and varied population stands on a regular basis."),
                         p((h2(strong("Future Research")))),
                           p("Viewing trends over time as they relate to this 
-                            topic would be incredibly insightful, when it comes 
+                            topic would be incredibly insightful. When it comes 
                             to the general social survey we'd have to merge several 
                             large datasets into one to display trends and it would 
-                            require a lot of time, but it could be an interesting 
-                            future project."),
+                            require a lot of time, but it would be an interesting 
+                            future project and would allow us to make predictions 
+                            for the future."),
                           p((h2(strong("Data Quality")))),
                           p("The dataset we used was of reasonable quality. There 
-                          wasn't any clear signs of bias in the original survey and 
+                          weren't any clear signs of bias in the original survey and 
                           when it came to choosing variables we tried to choose 
                           the survey questions that had the least potential to 
                           draw in biased results. There were 710 variables in 
