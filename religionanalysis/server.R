@@ -108,7 +108,15 @@ function(input, output, session) {
     })
     
     output$pg1desc <- renderText({
-      return("have to add a description still")
+      return("The intention of this page is to paint a general picture of
+             the attitudes of respondents based on their religious
+             preference. In order to do this, the application allows the user
+             to select religiosity and then choose a variable to see plotted.
+             Then users can switch back and forth between the two radio buttons
+             to compare attitudes of religious respondents to nonreligious
+             respondents. The variables chosen for comparison are pretty
+             contested issues in American politics and cultural life and
+             TBD")
     })
 
 
